@@ -38,6 +38,13 @@ function populate() {
         for (var i = 0; i < questions.length; i++) {
             isWrong(questions[i], i);
         }
+        if(quiz.score>=5){
+            alert("YOU WON, CONGRATULATIONS!");
+        }
+        if(quiz.score<5){
+            alert("YOU LOSED, TRY AGAIN");
+            quiz.score = 0;
+        }
 
     } else {
         var element = document.getElementById("question");
@@ -77,13 +84,7 @@ function isWrong(question,index) {
         alert('Sorry. The correct answer is: ' + question["answer"]);
     }
   
-    if(quiz.score>=5){
-        alert("YOU WON, CONGRATULATIONS!");
-    }
-    if(quiz.score<5){
-        alert("YOU LOSED, TRY AGAIN");
-        quiz.score = 0;
-    }
+   
 
 }
 function showProgress() {
