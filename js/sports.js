@@ -1,11 +1,10 @@
-// code by webdevtrick (https://webdevtrick.com)
+
 function Quiz(questions) {
     this.score = 0;
     this.questions = questions;
     this.questionIndex = 0;
 
 }
-
 
 Quiz.prototype.getQuestionIndex = function () {
     return this.questions[this.questionIndex];
@@ -22,8 +21,6 @@ Quiz.prototype.isEnded = function () {
     return this.questionIndex === this.questions.length;
 }
 
-
-
 function Question(text, choices, answer) {
     this.text = text;
     this.choices = choices;
@@ -33,9 +30,6 @@ function Question(text, choices, answer) {
 Question.prototype.isCorrectAnswer = function (choice) {
     return this.answer === choice;
 }
-
-
-
 
 function populate() {
     if (quiz.isEnded()) {
@@ -77,9 +71,7 @@ function isWrong() {
 
 }
 function showProgress() {
-
     var currentQuestionNumber = quiz.questionIndex + 1;
-
     var element = document.getElementById("progress");
     element.innerHTML = "Question " + currentQuestionNumber + " of " + quiz.questions.length;
 };
@@ -102,7 +94,7 @@ var questions = [
 
 
 ];
-//Create Quiz
+//Create New Quiz
 var quiz = new Quiz(questions);
 //show Quiz
 populate();
