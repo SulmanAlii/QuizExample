@@ -28,13 +28,16 @@ function Question(text, choices, answer) {
 
 }
 Question.prototype.isCorrectAnswer = function (choice) {
+    userAnswers.push(choice);
     return this.answer === choice;
 }
 
 function populate() {
     if (quiz.isEnded()) {
         showScores();
-        isWrong();
+        for (var i = 0; i < questions.length; i++) {
+            isWrong(questions[i], i);
+        }
 
     } else {
         var element = document.getElementById("question");
@@ -59,8 +62,22 @@ function guess(id, guess) {
     }
 };
 
+var userAnswers = [];
+
 //Show Wrong Answers
-function isWrong() {
+function isWrong(question,index) {
+
+    var answer = userAnswers[index];
+    alert("User answer for question " + (index+1) + ": " + userAnswers[index]);
+    if(answer == question["answer"]){
+        alert("Correct");
+    }
+    else{
+        //incorrectA.push(index);
+        alert('Sorry. The correct answer is ' + question["answer"]);
+    }
+    //for (var i =
+    /*
     if(quiz.score>=5){
         alert("YOU WON, CONGRATULATIONS!");
     }
@@ -68,7 +85,7 @@ function isWrong() {
         alert("YOU LOSED, TRY AGAIN");
         quiz.score = 0;
     }
-
+*/
 }
 function showProgress() {
     var currentQuestionNumber = quiz.questionIndex + 1;
@@ -87,7 +104,7 @@ function showScores() {
 var questions = [
     new Question("What is the name of the club where Lionel Messi plays?", ["Fc Barcelona", "Chelsea", "Manchester City", "Real Madrid"], "Fc Barcelona"),
     new Question("In which league of the world is Crystal Palace?", ["Liga Alemana", "Liga Francesa", "Premier League", "La Liga"], "Premier League"),
-    new Question("What team is Andrés Iniesta currently playing in?" ["Fc Barcelona", " Club Fuentealbilla", "Vissel Kobe", "Ninguno de los anteriores"], "Vissel Kobe"),
+    new Question("What team is Andrés Iniesta currently playing in?", ["Fc Barcelona", " Club Fuentealbilla", "Vissel Kobe", "Ninguno de los anteriores"], "Vissel Kobe"),
     new Question("Pep Guardiola in which leagues he has trained?", ["La Liga", "Liga Alemana", "Premier League", "Todos"], "Todos"),
     new Question("Which team won the Champions League in the 2018/2019 season?", ["Real Madrid", "Liverpool", "Fc Barcelona", "PSG"], "Liverpool")
 
