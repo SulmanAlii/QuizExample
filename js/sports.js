@@ -103,9 +103,9 @@ function showScores() {
 
 var questions = [
     new Question("What is the name of the club where Lionel Messi plays?", ["Fc Barcelona", "Chelsea", "Manchester City", "Real Madrid"], "Fc Barcelona"),
-    new Question("In which league of the world is Crystal Palace?", ["Liga Alemana", "Liga Francesa", "Premier League", "La Liga"], "Premier League"),
-    new Question("What team is Andrés Iniesta currently playing in?", ["Fc Barcelona", " Club Fuentealbilla", "Vissel Kobe", "Ninguno de los anteriores"], "Vissel Kobe"),
-    new Question("Pep Guardiola in which leagues he has trained?", ["La Liga", "Liga Alemana", "Premier League", "Todos"], "Todos"),
+    new Question("In which league of the world is Crystal Palace?", ["German League", "France League", "Premier League", "La Liga"], "Premier League"),
+    new Question("What team is Andrés Iniesta currently playing in?", ["Fc Barcelona", " Club Fuentealbilla", "Vissel Kobe", "None of the above"], "Vissel Kobe"),
+    new Question("Pep Guardiola in which leagues he has trained?", ["La Liga", "German League", "Premier League", "All"], "All"),
     new Question("Which team won the Champions League in the 2018/2019 season?", ["Real Madrid", "Liverpool", "Fc Barcelona", "PSG"], "Liverpool")
 
 
