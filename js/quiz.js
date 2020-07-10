@@ -32,13 +32,11 @@ Question.prototype.isCorrectAnswer = function (choice) {
     return this.answer === choice;
 }
 
-           
 function populate() {
     if (quiz.isEnded()) {
         showScores();
         for (var i = 0; i < questions.length; i++) {
-            isWrong(questions[i], i);
-           
+            isWrong(questions[i], i);  
         }
 
         if(quiz.score>=5){
@@ -86,9 +84,6 @@ function isWrong(question,index) {
         //incorrectA.push(index);
         alert('Sorry. The correct answer is: ' + question["answer"]);
     }
-  
-   
-
 }
 function showProgress() {
     var currentQuestionNumber = quiz.questionIndex + 1;
