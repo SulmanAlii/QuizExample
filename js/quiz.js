@@ -32,13 +32,15 @@ Question.prototype.isCorrectAnswer = function (choice) {
     return this.answer === choice;
 }
 
+           
 function populate() {
     if (quiz.isEnded()) {
         showScores();
         for (var i = 0; i < questions.length; i++) {
             isWrong(questions[i], i);
-            alert("You correctly answers:" +  quiz.score  + " of " +questions.length);
+           
         }
+
         if(quiz.score>=5){
             alert("YOU WON, CONGRATULATIONS!");
         }
